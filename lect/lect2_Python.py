@@ -94,12 +94,12 @@ help(len)
 
 # !man ls
 
-dir = !find . -type d
-dir
+direct = !find . -type d
+direct
 
 # ### Magiškos komandos: %cpaste, %run,  %pip, %conda
 
-conda info
+conda install git
 
 # %run ../lab/programa.py
 
@@ -111,10 +111,12 @@ conda info
 
 print(_)
 
+who
+
 a = 5
 a
 
-Out[5]
+Out[15]
 
 b = 4
 
@@ -175,6 +177,7 @@ print(function_name.__doc__)
 
 # ### Kintamieji
 
+# +
 # Integers
 10
 10
@@ -187,12 +190,13 @@ float
 400.0
 # Boolean
 type(True)
-bool
+
 # Complex
 type(3+4j)
-complex
+
 # Strings;
 path = '~/Documents/bioa/data'
+# -
 
 
 # ### Operatoriai
@@ -246,7 +250,7 @@ a[::-1]
 
 # Trumpos komandos elementų paeiškai ar palyginimui
 
-a
+print(a)
 
 1 in a
 
@@ -419,11 +423,11 @@ def functionName(inputVariable):
 # $Fahrenheit = 9.0/5.0 * Celsius + 32$
 
 # +
-def celcius_to_farenheit(celcius):
+def celcius_to_farenheit(celcius=100, temp=0):
     fahrenheit = 9.0/5.0 * celcius + 32
     return fahrenheit, celcius
 
-celcius_to_farenheit(36)
+celcius_to_farenheit(celcius=33)
 # -
 
 output = celcius_to_farenheit(0)
@@ -503,6 +507,7 @@ list(range(4))
 for i in range(4):
     print(i)
     i = 10
+    print(i)
 
 # +
 from time import sleep

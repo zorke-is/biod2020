@@ -412,6 +412,8 @@ TestList = [1, [79, 77, 78], 0, [2, [45, 65], 55], 4]
 
 
 
+
+
 # Pakeičiam funkciją kad ji gražintu dar ir temperatūrą kelvino skalėj
 
 
@@ -702,6 +704,7 @@ convert_to_SI(40, "temp")
 
 def convert_to_SI2(value, type="celsius"):
     pass
+
 
 
 
