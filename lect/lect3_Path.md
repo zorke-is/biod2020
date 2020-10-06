@@ -215,6 +215,10 @@ os.chdir(test_dir)
 %pwd
 ```
 
+```{code-cell} ipython3
+pwd
+```
+
 Sužinom dabartinę direktoriją
 
 ```{code-cell} ipython3
@@ -335,9 +339,13 @@ os.system(f"touch {test_file}")
 shutil.copy(test_file, test_file2)  # same as cp in shell, preserves metadata
 ```
 
+```{code-cell} ipython3
 shutil.copytree(source_directory, destination_directory)
+```
 
+```{code-cell} ipython3
 shutil.move(souce, destination)  # files or directories
+```
 
 ```{code-cell} ipython3
 help(os)
@@ -442,6 +450,11 @@ list(r)
 Plačiau
 
 ```{code-cell} ipython3
+---
+jupyter:
+  outputs_hidden: true
+  source_hidden: true
+---
 help(pathlib.Path)
 ```
 
