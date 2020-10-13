@@ -1,0 +1,67 @@
+#!/usr/bin/env python
+"""
+Usage: mkpr root_folder_name gitignoreLangueName gitignoreLangueName2 etc
+
+Create directory structure and starting files for Project.
+.
+├── Code
+├── DATA
+├── .gitignore
+└── Text
+    ├── Figures
+        └── README.md
+
+    4 directories, 2 files
+"""
+
+import sys
+import os
+import pathlib
+import datetime
+import requests
+
+
+def create_dir(arg1):
+    """
+    Creates directories with template by given name.
+    :arg1: root directory name
+    :returns:  nothing; creates directory tree
+    """
+    pathlib.Path(arg1, "Text", "Figures").mkdir(parents=True, exist_ok=True)
+    pathlib.Path(arg1, "Code").mkdir(parents=True, exist_ok=True)
+    pathlib.Path(arg1, "DATA").mkdir(parents=True, exist_ok=True)
+
+
+def create_files(arg1):
+    """
+    arg1: root folder name
+    returns: Creates files:
+        README.md in Text directory
+    """
+    file_readme = open(os.path.join(arg1, "Text", "README.md"), "w+")
+    file_readme.write(
+        f"# MAIN GOAL\n---\nCreated {datetime.datetime.now()}\n--- \n## TASKS\n\n## COLLECTOR\n\n## STEPS DONE\n")
+    file_readme.close()
+
+
+def create_gitignore(arg1, arg2):
+    """
+    :arg1: root dir name
+    :arg2: optional gitignore arguments
+    :returns: creates gitignore file in root folder
+    """
+    url = "https://www.gitignore.io/api/vim,linux,latex,matlab,python,windows,visualstudiocode"
+    if arg2:
+        additional_gitignore_parameters = ",".join(a for a in arg2)
+        url = url + "," + additional_gitignore_parameters
+    requests_object = requests.get(url)
+    file_gitignore = open(os.path.join(arg1, ".gitignore"), "wb")
+    file_gitignore.write(requests_object.content)
+    file_gitignore.close()
+
+
+if __name__ == "__main__":
+    ARG = sys.argv[1] + "_" + datetime.datetime.now().strftime("%Y%m%d")
+    create_dir(ARG)
+    create_files(ARG)
+    create_gitignore(ARG, sys.argv[2: len(sys.argv)])
