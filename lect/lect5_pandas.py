@@ -534,7 +534,7 @@ def find_files(directory, pattern):
     return files
 
 
-directory = '/home/aleks/Documents/bioa/data/'
+directory = '/home/aleks/Documents/biod2020/data/'
 pattern = '**/temp.csv'
 files = find_files(directory, pattern)
 files
