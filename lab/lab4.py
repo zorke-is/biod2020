@@ -34,6 +34,8 @@
 
 
 
+
+
 # ---
 # >> **UŽDUOTIS**
 # >>
@@ -50,6 +52,8 @@ def gen_wave(Hz=10, sample_rate=1000, length_sec=1):
 sample_rate = 1000
 length_sec = 1
 plt.plot(*gen_wave());
+
+
 
 
 

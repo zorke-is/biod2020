@@ -179,7 +179,7 @@ np.arange(0, 20, 2)
 np_array, step = np.linspace(0, # pradinis taškas
 1, # pabaiga
 5, # taškų skaičius
-endpoint=True, # Paskutinio elemento įtraukimas
+endpoint=False, # Paskutinio elemento įtraukimas
 retstep=True, # žingsnis
 dtype=float) # duomenų tipas
 
@@ -289,6 +289,10 @@ rng.random(size=4)
 
 ```{code-cell} ipython3
 rng.random()
+```
+
+```{code-cell} ipython3
+rng.shuffle?
 ```
 
 Sumaišyti sąrašą galime
